@@ -13,6 +13,12 @@ public class LibraryModel {
     public List<Book> getAllBooks() {
         return new ArrayList<>(books); // return copy (safer)
     }
+    public Book addBook(String title, String author) {
+    Book b = new Book(nextId++, title, author);
+    books.add(b);
+    return b;
+}
+
     public List<Book> searchByTitle(String keyword) {
         List<Book> results = new ArrayList<>();
         for (Book b : books) {
